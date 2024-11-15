@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Social';
+  src: url('/ABCSocialPlusVariable-Trial.woff2') format(woff2);
+  font-weight: 100 900;
+  font-style: oblique -12;
+  font-variation-settings: 'wght' 400, 'wdth' 100, 'slnt' 0;
+  font-feature-settings: 'rlig' 1, 'rvrn' 1, 'kern' 1, 'rclt' 1, 'ss07' 1,
+    'ss01' 1, 'ss02' 1;
+  font-kerning: normal;
+}
+
+:root {
+  --fluid-16-48: clamp(1rem, 0.3043rem + 3.4783cqi, 3rem);
+  --line-24-72: clamp(1.5rem, 0.4565rem + 5.2174cqi, 4.5rem);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background-color: bisque;
+  font-family: 'Social', 'Courier New', Courier, monospace;
+  color: #333;
+}
+
+#container {
+  container-type: size;
+  font-size: var(--fluid-16-48);
+  white-space: nowrap;
+  overflow: visible;
+  margin: 0 auto;
+  line-height: var(--line-24-72);
+  max-inline-size: 41ch;
+  animation: fontWeightAnimation 1s infinite alternate;
+}
+
+p {
+  border: 1px solid dodgerblue;
+  margin: 0;
+  padding: 0;
+  max-inline-size: 41ch;
+}
+
+@keyframes fontWeightAnimation {
+  0% {
+    font-variation-settings: 'wght' 100;
+    font-variation-settings: 'wdth' 75;
+    max-inline-size: 0%;
+  }
+  100% {
+    font-variation-settings: 'wght' 900;
+    font-variation-settings: 'wdth' 125;
+    max-inline-size: 100%;
+  }
+}
